@@ -9,6 +9,9 @@ var routes = require('./routes/index');
 var anmeldung = require('./routes/anmeldung');
 var users = require('./routes/users');
 
+//add database url
+var nano = require('nano')('http://localhost:5984');
+
 var app = express();
 
 // view engine setup
@@ -19,9 +22,12 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//add Database
+var db = nano.db.use('personen');
 
 app.use('/', routes);
 app.use('/anmeldung', anmeldung);
