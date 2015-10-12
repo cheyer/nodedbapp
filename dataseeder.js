@@ -1,5 +1,5 @@
 // DB URL hier einsetzten
-var nano = require('nano')('http://localhost:5984/');
+var nano = require('nano')('https://bd79794f-0a40-4621-a2fd-3f5946e9f39d-bluemix:4dad3384b7cda9dc34feb72e7b092fd3ddac6afd71055fe840eaba27538a1023@bd79794f-0a40-4621-a2fd-3f5946e9f39d-bluemix.cloudant.com');
 
 // bereits bestehende DB löschen
 nano.db.destroy('personen', function() {
