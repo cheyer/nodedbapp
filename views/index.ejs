@@ -13,7 +13,9 @@
   <p>Welcome to
     <%= title %>
   </p>
+  
   <h1>Anmeldeliste</h1>
+  <p>Noch nicht angemeldet? <a href="http://127.0.0.1:3000/anmeldung">Hier kannst du dich anmelden!</a></p>
   <% for(var i=0; i<personen.length; i++) {%>
     <li>
       <%= personen[i].vorname %> <%= personen[i].nachname %>

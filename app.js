@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var anmeldung = require('./routes/anmeldung');
 var users = require('./routes/users');
+var submitform = require('./routes/submitform');
+
 
 //add database url
 var nano = require('nano')('http://localhost:5984');
@@ -32,6 +34,8 @@ var db = nano.db.use('personen');
 app.use('/', routes);
 app.use('/anmeldung', anmeldung);
 app.use('/users', users);
+app.use('/submitform', submitform);
+
 
 
 // catch 404 and forward to error handler
