@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 
-  </body>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to
+    <%= title %>
+  </p>
+  <h1>Anmeldeliste</h1>
+  <% for(var i=0; i<personen.length; i++) {%>
+    <li>
+      <%= personen[i].vorname %> <%= personen[i].nachname %>
+    </li>
+    <% } %>
+
+</body>
+
 </html>
